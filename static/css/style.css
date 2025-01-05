@@ -1,0 +1,146 @@
+
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;
+}
+
+.navbar {
+    display: flex;
+    padding: 0rem;
+    margin-bottom: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navbar a {
+    font-family: FreeLine;
+}
+
+.navbar-brand {
+    color: #adaab5;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+    flex-basis: 15%;
+    font-weight: bolder;
+    font-size: 19px;
+    text-align: center;
+}
+
+.posttitle {
+    text-decoration: none;
+}
+
+.nav-link {
+    margin: 0 1rem 0 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.container-fluid a:hover {
+    outline: 2px solid white;
+    transition: 0s;
+    color: black;
+}
+
+
+/* puts the button within the div and aligns them to the right */
+.button_row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 0 0.5rem 0 0;
+}
+
+/* general button that gives a top and bottom margin */
+.gen_button {
+    margin: 0.5rem 0 0.5rem 0;
+    color: black;
+}
+
+/* 2nd general button that gives a margin all around except the right */
+.gen_button2 {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+/* 3rd general button that gives a margin all around except the top */
+.gen_button3 {
+    margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.gen_card {
+    border-radius: 1rem;
+}
+
+.gen_form {
+    display: flex;
+    justify-content: center;
+}
+
+/* CRUD */
+body {
+    font-size: 18px;
+}
+
+.staff-entry h4 {
+    margin: 1rem;
+    text-align:center;
+}
+
+.staff-entry h4 a {
+    color: azure;
+    text-decoration: none;
+}
+
+.gen_link a{
+    text-decoration: none;
+}
+
+.line {
+    color: azure;
+    margin:1rem 4rem 1rem 4rem;
+}
+
+.staff-entry h3 {
+    margin: 1.5rem;
+    text-align:center;
+}
+
+/* Cart Page */
+.gen_image {
+    width: 100%;
+    height: 100%;
+}
+
+.stripe-button {
+    margin: 0.5rem 0 0.5rem 0;
+    background-color: #ffba00; /* roughly the hex value for btn-warning */
+    border: 0px !important;
+    background-image: none !important;
+}
+
+/* Navbar image */
+
+.product-img-class {
+    align-items: center;
+}
+
+.container {
+    align-items: center;
+    display: inline;
+    justify-content: center;
+    margin-bottom: auto;
+}
+
+.welcomeButton ul li {
+    text-decoration: none;
+    color: #fff;
+}
+
+.welcomeHead ul li{
+    gap: 280px;
+}
