@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class= "gen_card card m-4 text-center text-light">
+        <table class = "mx-auto text-start">
+            <h2 class = "card-header">{{user.profile.user }}'s Profile Details</h2>
+                <br>
+                <tr><td><span class = "badge text-light">Name:   </span> </td>          <td>{{ user.profile.user }}</td></tr> 
+                <tr><td><span class = "badge text-light">Date Of Birth:   </span></td>    <td>{{ user.profile.date_of_birth }}</td></tr>
+                <tr><td><span class = "badge text-light">Address Line 1:   </span> </td>                       <td>{{ user.profile.Address_Line_1 }}</td></tr>   
+                <tr><td><span class = "badge text-light">Address Line 2:   </span> </td>                       <td>{{ user.profile.Address_Line_2 }}</td></tr> 
+                <tr><td><span class = "badge text-light">City:   </span> </td>                                 <td>{{ user.profile.Address_City }}</td></tr>    
+                <tr><td><span class = "badge text-light">Country:   </span> </td>                               <td>{{ user.profile.Address_Country }}</td></tr> 
+        </table>
+    <br>
+{% else %}
+    <div class = "text-center text-light">
+        <p>This page doesn't apply to those without a profile.</p>
+        <a href="{% url 'home' %}">Home</a>
+    </div>{% endif %}
+</div>
+
+{% endblock content %}

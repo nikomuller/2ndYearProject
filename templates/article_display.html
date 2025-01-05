@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="navbar-brand text-center text-light">Store Updates</h1>
+{% for article in object_list %}
+<div class="card m-4 gen_card">
+    <div class="card-header text-center">
+        <h5>
+            <a class="posttitle" href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+        </h5>
+        <span class="text-muted badge badge-primary">{{ article.author }} | {{ article.date }}</span>
+    </div>
+    <div class="card-body m-2">
+        <p>{{ article.body }}</p>
+    </div>
+
+    <div class="card-footer">
+        {% if article.comments.count >= 1 %}
+        <!-- counts the amount of comments and returns the link if the value is higher than 1 -->
+        <p class="card-header text-center border border-dark m-2">
+            <a class="posttitle" href="{% url 'article_detail' article.slug %}">View Comments</a>
+        </p>
+        {% else %}
+        <p class="card-header text-center border border-dark m-2">No comments to display</p>
+        {% endif %}
+    </div>
+    <!-- Removed comments to make the display easier to read -->
+</div>
+<br>
+{% endfor %}
+<a class="btn btn-sm btn-outline-secondary m-5 mt-0 badge" href="#">Back to top</a>
+{% endblock content%}

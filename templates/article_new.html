@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="card m-5 text-center">
+    <div class="card-header">
+        <h1 class="text-dark">New Post</h1>
+    </div>
+    <div class="card-body gen_form">
+        <form action="" method="post">
+            {% csrf_token %} 
+            {{ form|crispy }}
+            <button class="btn btn-outline-primary ml-2" type="submit">Save</button>
+        </form>
+    </div>
+    <div class="card-footer text-center">
+        <a class="btn badge btn-primary gen_button" href="{% url 'article_display' %}">Back</a>
+{% endblock content %}
+    </div>
+</div>

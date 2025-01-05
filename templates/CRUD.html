@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+<h1 class = "text-center text-light">Staff CRUD</h1>
+<hr class = "line">
+<div class = "d-grid col-1 mx-auto">
+    <a class = 'btn btn-outline-primary gen_button' href = "{% url 'staff_new' %}">Add Staff</a>
+</div>
+<table class = "table-bordered staff-entry mx-auto text-light">
+
+    <div class ="staff-entry m-3">
+        <tr>
+            <td>
+                <h3>
+                    Name
+                </h3>
+            </td>
+            <td>
+                <h3>
+                    ID Number
+                </h3>
+            </td>
+            <td>
+                <h3>
+                    Role
+                </h3>
+            </td>
+        </tr>
+    </div>
+
+{% for staff in all_staff_list %}
+
+    <div class ="staff-entry m-3">
+        <tr>
+            <td>
+                <h4><a href = "{% url 'staff_detail' staff.pk %}">{{staff.name}}</a></h4>
+            </td>
+            <td>
+                <h4 class = "text-light">{{staff.ID_number}}</h4>
+            </td>
+            <td>
+                <h4 class = "text-light">{{staff.staff_type}}</h4>
+            </td>
+        </tr>
+    </div>
+
+{% endfor %}
+
+</table>
+</body>
+
+{% endblock content %}

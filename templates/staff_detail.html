@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "card m-2 gen_card">
+    <div class = "card-header text-center">
+        <h1>{{staff.name}} summary</h1>
+    </div>
+<div class = "staff-entry card-body">
+    <p>Name: {{staff.name}}</p>
+    <p>DOB: {{staff.DOB}}</p>
+    <p>ID: {{staff.ID_number}}</p>
+    <p>Role: {{staff.staff_type }}</p>
+</div>
+    <div class = "button_row">
+        <a class = "btn col-1  btn-outline-warning col-1 gen_button3" href = "{% url 'staff_edit' staff.pk %}">Edit</a>
+        <a class = "btn col-1  btn-outline-danger col-1  gen_button3" href = "{% url 'staff_delete' staff.pk %}">Delete</a>
+    </div>
+</div>
+
+<a class = "btn badge btn-primary gen_button3" href = "{% url 'CRUD' %}">Back</a>
+{% endblock content %}

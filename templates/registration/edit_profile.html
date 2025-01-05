@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<div>
+    <h2>Edit {{user.profile.user}}'s Profile</h2>
+   
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a href="{% url 'password_change' %}">Change Password</a>
+            <input type="submit" value="Update Profile">
+        </form>
+    </div>
+    <a href="{% url 'home' %} ">Back</a>
+{% else %}
+<div>
+<p>Create an account to edit your profile.</p>
+<a href="{% url 'home' %}">Home</a>
+</div>{% endif %}
+</div>
+
+
+{% endblock content %}

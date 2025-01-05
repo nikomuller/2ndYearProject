@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card m-2 text-center">
+    <div class="card-header bg-danger">
+        <h1 class="text-center text-light">Delete</h1>
+    </div>
+    <div class="card-body">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Do you want to delete "{{ article.title }}"?</p>
+            <button class="btn btn-outline-danger ml-2" type="submit">Yes, I'm sure</button>
+            <a class="btn btn-outline-warning" href="{% url 'article_display' %} ">No, take me back</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

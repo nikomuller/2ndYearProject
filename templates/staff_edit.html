@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class = "card m-2 text-center gen_card">
+    <div class = "card-header">
+        <h1>Edit Staff Member</h1>
+    </div>
+    <div class = "card-body gen_form">
+<form action ="" method = "POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class = "btn btn-outline-dark" type = "submit" value = "Update"></input>
+</form>
+</div>
+</div>
+
+
+<a class = "btn badge btn-primary gen_button3" href = "{% url 'CRUD' %}">Back</a>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "card m-2 text-center">
+    <div class = "card-header bg-danger ">
+        <h1>Delete Staff Member</h1>
+    </div>
+    <div class = "card-body">
+        <form action = "" method ="POST">
+            {% csrf_token %}
+            <p>Do you want to delete "{{staff.name}}"?</p>
+            <input class = "btn btn-outline-danger ml-2" type = "submit" value = "Yes, I'm sure"></input>
+            <a class="btn btn-outline-warning" href="{% url 'staff_detail' staff.pk %} ">No, take me back</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

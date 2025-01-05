@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+<div class="banner">
+    <A href="{% url 'shop:allProductCat' %}">
+        <img src="{% static 'images/banner.png' %}" alt="Banner Image">
+    </div>
+
+<div class="secondbanner mb-3">
+    <A href="{% url 'shop:allProductCat' %}">
+        <img src="{% static 'images/NEWDROPORANGEJ1.png' %}" alt="Banner Image">
+    </div>
+
+{% for message in messages %}
+    <div class="message text-white text-center alert alert-danger bg-danger {{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+    {% if user.is_authenticated %}
+
+    {% else %}
+<div class="text-sm-center text-light">
+    <div>
+    <a href="{% url 'signup' %}" class="btn btn-outline-light m-2 text-uppercase">Sign up</a>
+
+    <p class="text-bg mt-2 text-uppercase">Log in with an existing account.</p>
+    <a href="{% url 'login' %}" class="btn btn-outline-light text-uppercase">Log In</a>
+
+    <p class="mt-4 text-uppercase">Explore all of our available products</p>
+    {% endif %}
+
+    <div class = "welcomeButton row text-uppercase">
+        <div class = "text-center">
+            <a class="btn btn-outline-light" href="{% url 'shop:allProductCat' %}">View Our Products</a>
+        </div>
+    </div>
+</div>
+
+{{ redirect_to_login_immediately }}
+
+
+{% endblock content %}
