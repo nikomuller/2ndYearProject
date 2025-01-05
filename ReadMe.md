@@ -1,10 +1,6 @@
 EzKickz E-commerce website
 2nd Year Project - 2023
 
-X00188015 - Jan Parcon
-X00188513 - Nikolas Muller
-X00188986 - Laurynas Adomaitis
-
 External Packages :
     asgiref==3.5.2
     certifi==2022.12.7
