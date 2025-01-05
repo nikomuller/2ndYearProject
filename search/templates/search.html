@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<body class = "text-light">
+    <div class = "text-center">
+        
+   </div>
+
+    <div>
+        <div>
+            <p class="text-center my_search_text text-light">Results for :  <b>{{query}}</b></p>
+            <hr class = "line">
+        </div>
+        <div class = "row m-2">
+            {% for product in product_list %}
+                <div class = "col-3">
+                    <div class = "card m-4">
+                        {% if product.image %}
+                        <a class = "img p-2" href="{{product.get_absolute_url}}"><img src="{{product.image.url}}" alt="{{product.name}}" width="90%"></a>
+                        {% endif %}
+                        <div class="card-footer text-center text-dark pt-1 pb-1">
+                            <h4 class= "m-0">{{product.name}}</h4>
+                            <p>€{{product.price}}</p>
+                            <span class = "fst-italic">{{product.category}}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="mx-auto">
+            {% if products.paginator.num_pages > 0 %}
+                <hr class="line">
+                <div class="text-center">
+                    {% for pg in products.paginator.page_range %}
+                    <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}active{% endif %}">{{pg}}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+{% endblock %}
