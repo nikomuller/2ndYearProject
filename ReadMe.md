@@ -1,3 +1,20 @@
+#How To Run
+
+git clone https://github.com/nikomuller/Shoe-eCommerce-Website.git
+
+cd your-repository-folder
+
+python -m venv pyvenv 
+pyvenv\Scripts\activate
+
+pip install -r requirements.txt
+
+python manage.py makemigrations 
+python manage.py migrate
+
+python manage.py runserver
+
+
 EzKickz E-commerce website
 2nd Year Project - 2023
 
