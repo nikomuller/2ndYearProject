@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div>
+    <div class="text-center text-light">
+        <br>
+        <h1 class="text-center">Order History</h1>
+        <hr class = "line2">
+        <br>
+        {% if order_details %}
+        <table class="table mx-auto text-light">
+            <tr>
+                <td>Order No.</td>
+                <td>Order Date</td>
+                <td>Total</td>
+                <td>Status</td>
+                <td>Action</td>
+            </tr>
+        {% for order in order in order_details %}
+            <tr>
+                <td>#0{{ order.id }}</td>
+                <td>{{ order.created|date:"d M Y" }}</td>
+                <td>€{{ order.total }}</td>
+                <td>Complete<i class="fas fa-check-circle"></i></td>
+                <td><a class="posttitle gen_link" href="{% url 'order:order_detail' order.id %}">View Order</a></td>
+            </tr>
+        {% endfor %}
+        </table>
+        {% else %}
+        <p>No Orders to view.<br><br><a class="btn btn-primary badge" href="{% url 'shop:allProductCat' %}">Continue Shopping</a></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

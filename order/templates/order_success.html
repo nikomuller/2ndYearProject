@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Thanks - EzKickz
+{% endblock %}
+{% block content %}
+    <div>
+        <div class="text-center text-light">
+            <br>
+            <br>
+            <h1 class="text-center my_title text-light">
+                Thank you for placing an order
+            </h1>
+            <br>
+            <br>
+            <p>Your order number is: {{ customer_order.id }}</p>
+            <br>
+            <p>
+                We have received your order and will begin processing right 
+                away. For your records, an email confirmation has been sent to 
+                you. It contains details of the items you purchased.
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock %}
