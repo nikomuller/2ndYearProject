@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% for message in messages %}
+    <div class="message text-white text-center alert alert-danger bg-danger {{ message.tags }}">
+        {{ message }}
+    </div>
+{% endfor %}
+<body class = "text-light">
+    <div>
+    <div>
+    <div class ="row mx-auto">
+        <div class = "col-6  text-center mt-3">
+                {% if product.image %}
+                <img class="product-img-class" src="{{product.image.url}}"
+                alt="{{product.name}}" width = "60%">
+                {% endif %}
+        </div>
+    
+        <div class = "col-4 text-center mt-5 pt-6">
+                <h2 class = "text-center">{{product.name}}</h2>
+                <hr class="line">
+                <div class = "container-fluid">
+                <span class = "badge">Price:</span><p>€{{product.price}}</p>
+                <!-- euro sign found on external website and pasted in -->
+                <hr class = "line">
+                <span class = "badge">About this item:</span>
+                <p>{{product.description}}</p>
+                {% if product.stock == 0 %}
+                <p class ="text-muted"><b>Out of Stock</b></p>
+                {% elif product.stock < 6 %}
+                <h4 class= "text-danger">{{product.stock}} left in stock.</h4>
+                <p><a class = "btn btn-warning gen_button" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a></p>
+                <a class="btn badge btn-primary gen_button" href="{% url 'shop:allProductCat' %}">Back</a>
+                <br><br>
+                {% else %}
+                <h4 class= "badge">In stock</h4>
+                <p><a class = "btn btn-success gen_button" href="{% url 'cart:add_cart' product.id %}">Add to Cart</a></p>
+                <a class="btn badge btn-danger gen_button" href="{% url 'shop:allProductCat' %}">Back</a>
+                <br><br>
+                {% endif %}
+        </div>
+    </div>
+    </div>
+</body>
+{{ redirect_to_login_immediately }}
+{% endblock %}
